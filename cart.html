@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FLATICON ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+
+    <!--=============== SWIPER CSS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Ecommerce Website</title>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header class="header">
+      <div class="header__top">
+        <div class="header__container container">
+          <div class="header__contact">
+            <span>(+01) - 2345 - 6789</span>
+            <span>Our location</span>
+          </div>
+          <p class="header__alert-news">
+            Super Values Deals - Save more coupons
+          </p>
+          <a href="login-register.html" class="header__top-action">
+            Log In / Sign Up
+          </a>
+        </div>
+      </div>
+
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo">
+          <img
+            class="nav__logo-img"
+            src="s-removebg-preview.png"
+            alt="website logo"
+          />
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="shop.html" class="nav__link">Shop</a>
+            </li>
+            <li class="nav__item">
+              <a href="accounts.html" class="nav__link">My Account</a>
+            </li>
+            <li class="nav__item">
+              <a href="compare.html" class="nav__link">Compare</a>
+            </li>
+            <li class="nav__item">
+              <a href="login-register.html" class="nav__link">Login</a>
+            </li>
+          </ul>
+          <div class="header__search">
+            <input
+              type="text"
+              placeholder="Search For Items..."
+              class="form__input"
+            />
+            <button class="search__btn">
+              <img src="assets/img/search.png" alt="search icon" />
+            </button>
+          </div>
+        </div>
+        <div class="header__user-actions">
+          <a href="wishlist.html" class="header__action-btn" title="Wishlist">
+            <img src="data:image/png;base64,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" alt="" />
+            <span class="count">3</span>
+          </a>
+          <a href="footer.html" class="header__action-btn" title="Cart">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEX///8VFRcAAAASEhTW1taqqqrw8PAWFhcFBQkLCw6YmJhdXV38/PxHR0j4+PgUFBXl5ea3t7fn5+fIyMidnZ29vb3R0dHf399fX19UVFQHBwtxcXF/f38wMDDy8vKampqtra2Pj481NTUmJiZDQ0OGhoZWVlZqamodHR07OzzDw8InJyl3d3ceHiGKiowAAAdr9QHNAAAJ1ElEQVR4nO2da1vyPAyAR8tpUDZAOU2dqCCg+PD//927KU2Ka7fxwtrhlfuTlyslWU9pkhbPIwiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIAiCIIhbQQjheXE7Syxci3YlEgVnmw7Lwl83y3b6+PaZJtpkaXA/UXM/di3dFYi3fsMEZ6yVNLNrES9kybhRw1TH/a0r6D2yTp6GnM1dS3gpexbmaNgIG+zxxjvqMl/DtKN+3LaGbT9vHCYKNqLdja8ZH4yF+UqyiWsZLyFpnmZfs+AzBosIjxaupbyEb6utPcwwm+wYjsS2azErQfQP0E1vfK4xEYMtwF5cy1IBaeed/zQi7/i7v9mG3j2MRBb8TQ2nqOHd32zEAIwB1nMtS0UMoqOGh5s3vw28yG7K+Z/spMK7w4HYdC1NFQivfYCBeG/3q4WtmW1wNE47h/6saRF7VuJadtNOV2udV8bGlgtskuvEqRDGhsLKrnTMioWphu7CzkgUO7OrsWJszd6PzhqRjexoOHKnoSXXycydhjNLK2KBJ64y+JsdBYW3OeCXmmmUKFSmDBY6bGxZNS00vr86BrYd6VTmjU6oLRJ2tiB98reppi8olIaEbCC8plzzORvpAqnfwVTpDOD+IDCUacfSAmywZ1OhAC0MW4uF8IJPEOyfsdgENHw11/UEwpvXgX/QY9glYp9Hv3v8Un9gLCN3WZxvY0MR4WHzTI0VQTtH7xeKfQbPIL3ZL9yEV38wlolL7DUDfAvPl8pdnil2nDtTGTRfmXFPoJSZ6UuI9Lt4YTtfnThS3qthAg9U6Q1lsJ19QzsLr4cTt6m3V8FCfm1kNPcFBK/M7QweEb4NTGVgzEfmMV8B6I4KjS/2CSZc4zwJFq55vg06bsIIxe4ogXOgeaEG08FfFXbkNBRkEWWQGd1Rc9m9WE8vvjLGzAsB2k9Ww3nCg11w1+gX3kvZ0rQGPbDTZA+mNpxDMw/sBhHWaLiZixxlSwxmAxto5rVJ/Lef7+Hpe7KoofA+2NHm75hWMoxSmQ2fBQxVU1+fyawQnux+rWo4lm0YGueRJYygJ1M9K9BwaRB/iRq2LYe6nuS+LRlCOtJmlhpuDXUEuKCYGggGs298TVWxl4lh/NNQAk0737Bmxh0YzCajoAEvcn8Nqc9hVGh2znCeN5RoYwmDYTdmJbZXFaFMAaM0PSVDKr98/zN9iRkkCKbvIPtcwCYzGe6mCa0yhBxDobH/FO7Nm/iWDJPIo3xLvHMVqc9iA3vEp95zL8vzPcPJSFeg9yxTIJNy2ip6z69QhXFNrQ4wp9KsYS0N4FBUwlSFdSeUil2/sP14czIRRBb9wjn7xwqZW2tEzrvv9nN3RGJ32mtEm04o1HBqrw2tOqEUHe21IWcuhqHiqq0c31FC8gt2Uz/qZlFegK95fMZzV7msd3BmgQ/6836GBQTG+ELzeL6AXu4vso+T51LF0K4TCmmj4am1OOIutIHWbB7i57X1t9DstukLVoEt+mGuW66Cbf72b4qGt7Z6CMTmRa+qBXxN/E07170pW3gNuDXyNU/VwJRVJ5TKBHfB2m64imQbLXWPW/kebzR83Z1eGRcMRIhu6NOJe/LjTOsPlp4snhO8qpydn+uO2uT5hAV2cv2nH9w5oZACT5hUget8wgJVYGvdp19hFO9dDUOB7ii9GwWSFaJ+RkYhvHeZMa7txGM504apI6gC8UtR4ArDqUTr9X7NDU6N0BE3vK7UZ4HBPZ07aoKdWLea4LkG3Vz5CH6gT5cZ8zgb6PzC6BPmOg1xNdDtjSC65cIJhbRywwrKiqaJ/cU5q2kaGDn2D3NgxArg8dRGHvLTMYb4NDPQlKiHObhlBx9MT00EMO7m+YTzEzH+YYDS7cEVNTsqI0nwBhpqtj9KIkbmk6WCzHa4xzk9s8MRJ/HBDLgcZM0FoQxSu+dWMpwc1vuFOInxit8PMUa8ytZ7h0apEycUEuOKmDFMhJKOkXFDCHSCdLMWDzzkrpxQyEKaXrqEEUzH0BgEj3l2eV+2fk72oyUgJSYMBxk+wVHzlX0I0xB/yj4MYZ19cXtSNT2sh/6kDOhQ5Wc+hEfmpDhbxNX6hXOSU60xiPLusrmQTqSZZ22zLrrp5SL0m2O7THLvI7pYwxpcodKutg3dD0PIratGQYvp+WaqO6zHfXOKuE0wOyq8wmHfE57qcR5e2ck/LFtXZOnY5pYI71OJL1y36nrctiXQta3bBv0BhLdEp1Ed5vark6YYQr5wDdbnKhDqYb16DJ1rMz/gQPybGiqnPuqxgF0dCMh/3+tw8SUrNewFSnYUe7iG46h+Oj4ohtu2N730Jpph3TQ8TeIzpfuew2HVa9apJYW4dopbeuf0YFInHXvbq+8REyXfXcZ+FYTXHlTjb2M/JzlcK+iJ4WdVW2DOWnWwIOK3brGs/1tFh2kYPyRveFGZE6NRByNJiZFVg79z3Ybjq97Gkxp/v7yvrgOkaiZ0I/pZrk/kK8PJPTy//8W524tgA6UJ2Wo0DtqTd4a3ArFZUEjszSOs4+t+FrSnj0zJ8bZ+8PCECTq8We/4rpUfVijVxdpK+c3RDTKFTbXrTIU1ehIxjg1HnNP4dTGQG8a7C+iQ4BlxdtbiCFxIy7/AikwWkC5IV6KOF8wNGgqo4x7OVrpdMNQkYZTuA1u2hPMNnJGHvlJH2+c/s2rodCAK9LKpL1pJyiyRsQW5DqfHt1bFF4dYIMDULFWVuJGX7fWbgT6tqPi+BRsIuTKEaV6P7GGi+HIklQVk9PfUHeEOTlI7zU2EpInvG1qkeMpZ/RKHXcAFEg2UcTisiZsZ59KOwLkUhhDnJero4fuAPv2dMSW7h9O59B9Ktz+KhnedlVyt8f4MxcxugmUUus2+vFNsmn26Mot0fZPTz/caUliHYvmx1bfjQqh3FTNr10FqEeig6bDP5+mw2XpF4UrduKJE5xr80F3fDWejvmJ6ux2GQumR0o/oNxrQv4x3I52Q9UUqXgP+5thVE2+5cYNY8qCE8PrGlBzeMd7NYwmRd6lwuZ+HEMrKoKlj4Tl3m25MGUNsUKp7patMy/SajBfX2ES8asXjflT6Yifh7RnXddR6/PiZCFa6TsY+x6V9nUm5R10dPquJZz94SMQ7aYIwZIszkxbumR+edPeQs7epVwePcMqS/3Yn3Z8ZJxXedMd8ZV4OGdvbvr/MSPKag16iVZT+UmkaNjqszz7Wmqoy2iUfTZX8/rnTTa3iayl368VXIth28Dj534I1e/2nLmPhLv3J2rp0UJUgbseXuo1EUkdNf3ZYZiiIi6ys9LPWfk/mfI6q1VY+giAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiCIW+U/Kg2TQxEi3mwAAAAASUVORK5CYII=" alt="" />
+            <span class="count">3</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!--=============== MAIN ===============-->
+    <main class="main">
+      <!--=============== BREADCRUMB ===============-->
+      <section class="breadcrumb">
+        <ul class="breadcrumb__list flex container">
+          <li><a href="index.html" class="breadcrumb__link">Home</a></li>
+          <li><span class="breadcrumb__link"></span>></li>
+          <li><span class="breadcrumb__link">Shop</span></li>
+          <li><span class="breadcrumb__link"></span>></li>
+          <li><span class="breadcrumb__link">Cart</span></li>
+        </ul>
+      </section>
+
+      <!--=============== CART ===============-->
+      <section class="cart section--lg container">
+        <div class="table__container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th>Rename</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img
+                    src="https://i.pinimg.com/236x/a3/dd/02/a3dd02c0183974871597dbf11df04a87.jpg"
+                    alt=""
+                    class="table__img"
+                  />
+                </td>
+                <td>
+                  <h3 class="table__title">
+                    J.Crew Mercantile Women's Short-Sleeve
+                  </h3>
+                  <p class="table__description">
+                    Lorem ipsum dolor sit amet consectetur.
+                  </p>
+                </td>
+                <td>
+                  <span class="table__price">$110</span>
+                </td>
+                <td><input type="number" value="3" class="quantity" /></td>
+                <td><span class="subtotal">$220</span></td>
+                <td><i class="fi fi-rs-trash table__trash"></i></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="https://i.pinimg.com/236x/a5/d2/de/a5d2de07b46f8dd1e8cd23350b929edc.jpg"
+                    alt=""
+                    class="table__img"
+                  />
+                </td>
+                <td>
+                  <h3 class="table__title">Amazon Essentials Women's Tank</h3>
+                  <p class="table__description">
+                    Lorem ipsum dolor sit amet consectetur.
+                  </p>
+                </td>
+                <td>
+                  <span class="table__price">$110</span>
+                </td>
+                <td><input type="number" value="3" class="quantity" /></td>
+                <td><span class="subtotal">$220</span></td>
+                <td><i class="fi fi-rs-trash table__trash"></i></td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="https://i.pinimg.com/236x/76/a1/1d/76a11d90e4c8930495e9d2988f708652.jpg"
+                    alt=""
+                    class="table__img"
+                  />
+                </td>
+                <td>
+                  <h3 class="table__title">
+                    Amazon Brand - Daily Ritual Women's Jersey
+                  </h3>
+                  <p class="table__description">
+                    Lorem ipsum dolor sit amet consectetur.
+                  </p>
+                </td>
+                <td>
+                  <span class="table__price">$110</span>
+                </td>
+                <td><input type="number" value="3" class="quantity" /></td>
+                <td><span class="subtotal">$220</span></td>
+                <td><i class="fi fi-rs-trash table__trash"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cart__actions">
+          <a href="#" class="btn flex btn__md">
+            <i class="fi-rs-shuffle"></i> Update Cart
+          </a>
+          <a href="#" class="btn flex btn__md">
+            <i class="fi-rs-shopping-bag"></i> Continue Shopping
+          </a>
+        </div>
+
+        <div class="divider">
+          <i class="fi fi-rs-fingerprint"></i>
+        </div>
+
+        <div class="cart__group grid">
+          <div>
+            <div class="cart__shippinp">
+              <h3 class="section__title">Calculate Shipping</h3>
+              <form action="" class="form grid">
+                <input
+                  type="text"
+                  class="form__input"
+                  placeholder="State / Country"
+                />
+                <div class="form__group grid">
+                  <input type="text" class="form__input" placeholder="City" />
+                  <input
+                    type="text"
+                    class="form__input"
+                    placeholder="PostCode"
+                  />
+                </div>
+                <div class="form__btn">
+                  <button class="btn flex btn--sm">
+                    <i class="fi-rs-shuffle"></i> Update
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="cart__coupon">
+              <h3 class="section__title">Apply Coupon</h3>
+              <form action="" class="coupon__form form grid">
+                <div class="form__group grid">
+                  <input
+                    type="text"
+                    class="form__input"
+                    placeholder="Enter Your Coupon"
+                  />
+                  <div class="form__btn">
+                    <button class="btn flex btn--sm">
+                      <i class="fi-rs-label"></i> Aplly
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="cart__total">
+            <h3 class="section__title">Cart Totals</h3>
+            <table class="cart__total-table">
+                <tr>
+                  <td><span class="cart__total-title">Cart Subtotal</span></td>
+                  <td><span class="cart__total-price">$240.00</span></td>
+                </tr>
+                <tr>
+                  <td><span class="cart__total-title">Shipping</span></td>
+                  <td><span class="cart__total-price">$10.00</span></td>
+                </tr>
+                <tr>
+                  <td><span class="cart__total-title">Total</span></td>
+                  <td><span class="cart__total-price">$250.00</span></td>
+                </tr>
+            </table>
+            <a href="checkout.html" class="btn flex btn--md">
+              <i class="fi fi-rs-box-alt"></i> Proceed To Checkout
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!--=============== NEWSLETTER ===============-->
+      <section class="newsletter section">
+        <div class="newsletter__container container grid">
+          <h3 class="newsletter__title flex">
+            <img
+              src="s-removebg-preview.png"
+              alt=""
+              class="newsletter__icon"
+            />
+            Sign in to Newsletter
+          </h3>
+          <p class="newsletter__description">
+            ...and receive $25 coupon for first shopping.
+          </p>
+          <form action="" class="newsletter__form">
+            <input
+              type="text"
+              placeholder="Enter Your Email"
+              class="newsletter__input"
+            />
+            <button type="submit" class="newsletter__btn">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!--=============== FOOTER ===============-->
+    <footer class="footer container">
+      <div class="footer__container grid">
+        <div class="footer__content">
+          <a href="index.html" class="footer__logo">
+            <img src="s-removebg-preview.png" alt="" class="footer__logo-img" />
+          </a>
+          <h4 class="footer__subtitle">Contact</h4>
+          <p class="footer__description">
+            <span>Address:</span> 13 Tlemcen Road, Street 32, Beb-Wahren
+          </p>
+          <p class="footer__description">
+            <span>Phone:</span> +01 2222 365 /(+91) 01 2345 6789
+          </p>
+          <p class="footer__description">
+            <span>Hours:</span> 10:00 - 18:00, Mon - Sat
+          </p>
+          <div class="footer__social">
+            <h4 class="footer__subtitle">Follow Me</h4>
+            <div class="footer__links flex">
+              <a href="#">
+                <img
+                  src="./assets/img/icon-facebook.svg"
+                  alt=""
+                  class="footer__social-icon"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="./assets/img/icon-twitter.svg"
+                  alt=""
+                  class="footer__social-icon"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="./assets/img/icon-instagram.svg"
+                  alt=""
+                  class="footer__social-icon"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="./assets/img/icon-pinterest.svg"
+                  alt=""
+                  class="footer__social-icon"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="./assets/img/icon-youtube.svg"
+                  alt=""
+                  class="footer__social-icon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__content">
+          <h3 class="footer__title">Address</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">About Us</a></li>
+            <li><a href="#" class="footer__link">Delivery Information</a></li>
+            <li><a href="#" class="footer__link">Privacy Policy</a></li>
+            <li><a href="#" class="footer__link">Terms & Conditions</a></li>
+            <li><a href="#" class="footer__link">Contact Us</a></li>
+            <li><a href="#" class="footer__link">Support Center</a></li>
+          </ul>
+        </div>
+        <div class="footer__content">
+          <h3 class="footer__title">My Account</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Sign In</a></li>
+            <li><a href="#" class="footer__link">View Cart</a></li>
+            <li><a href="#" class="footer__link">My Wishlist</a></li>
+            <li><a href="#" class="footer__link">Track My Order</a></li>
+            <li><a href="#" class="footer__link">Help</a></li>
+            <li><a href="#" class="footer__link">Order</a></li>
+          </ul>
+        </div>
+        <div class="footer__content">
+          <h3 class="footer__title">Secured Payed Gateways</h3>
+          <img
+            src="s-removebg-preview.png"
+            alt=""
+            class="payment__img"
+          />
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="copyright">&copy; 2024 Evara. All right reserved</p>
+        <span class="designer">Designer by Crypticalcoder</span>
+      </div>
+    </footer>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="main.js"></script>
+  </body>
+</html>

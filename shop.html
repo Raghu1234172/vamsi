@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== FLATICON ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css"
+    />
+
+    <!--=============== SWIPER CSS ===============-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Ecommerce Website</title>
+  </head>
+  <body >
+    <!--=============== HEADER ===============-->
+    <header class="header">
+      <div class="header__top">
+        <div class="header__container container">
+          <div class="header__contact">
+            <span>(+01) - 2345 - 6789</span>
+            <span>Our location</span>
+          </div>
+          <p class="header__alert-news">
+            Super Values Deals - Save more coupons
+          </p>
+          <a href="login-register.html" class="header__top-action">
+            Log In / Sign Up
+          </a>
+        </div>
+      </div>
+
+      <nav class="nav container">
+        <a href="index.html" class="nav__logo">
+          <img
+            class="nav__logo-img"
+            src="s-removebg-preview.png"
+            alt="website logo"
+          />
+        </a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="shop.html" class="nav__link active-link">Shop</a>
+            </li>
+            <li class="nav__item">
+              <a href="accounts.html" class="nav__link">My Account</a>
+            </li>
+            <li class="nav__item">
+              <a href="compare.html" class="nav__link">Compare</a>
+            </li>
+            <li class="nav__item">
+              <a href="login-register.html" class="nav__link">Login</a>
+            </li>
+          </ul>
+          <div class="header__search">
+            <input
+              type="text"
+              placeholder="Search For Items..."
+              class="form__input"
+            />
+           
+        </div>
+        <div class="header__user-actions">
+          <a href="wishlist.html" class="header__action-btn" title="Wishlist">
+            <img src="data:image/png;base64,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" alt="" />
+            <span class="count">3</span>
+          </a>
+          <a href="cart.html" class="header__action-btn" title="Cart">
+            <img src="https://i.pinimg.com/736x/f2/12/4e/f2124e83e9fd8ddeb31ac7cdb59f544c.jpg" alt="" />
+            <span class="count">3</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!--=============== MAIN ===============-->
+    <main class="main">
+      <!--=============== BREADCRUMB ===============-->
+      <section class="breadcrumb">
+        <ul class="breadcrumb__list flex container">
+          <li><a href="index.html" class="breadcrumb__link">Home</a></li>
+          <li><span class="breadcrumb__link"></span>></li>
+          <li><span class="breadcrumb__link">Shop</span></li>
+        </ul>
+      </section>
+
+      <!--=============== PRODUCTS ===============-->
+      <section class="products container section--lg">
+        <p class="total__products">We found <span>688</span> items for you!</p>
+        <div class="products__container grid">
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img 
+                  src="https://helios-i.mashable.com/imagery/articles/05djrP5PjtVB7CcMtvrTOAP/images-4.fill.size_2000x1125.v1723100793.jpg"
+                  alt=""  
+                  class="product__img default" 
+                />
+                <img
+                  src="data:image/jpeg;base64,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"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+              <div class="product__badge light-pink">Hot</div>
+            </div>
+            <div class="product__content">
+              <span class="product__category"></span>
+              <a href="details.html">
+                <h3 class="product__title">Laptop</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img
+                  src="https://www.hindustantimes.com/ht-img/img/2023/09/29/1600x900/xxx_1696009415483_1696009430855.JPG"
+                  alt=""
+                  class="product__img default"
+                />
+                <img
+                  src="https://zebronics.com/cdn/shop/files/Zeb-43P3-pic3.jpg?v=1721116891&width=2000"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+              <div class="product__badge light-green">Hot</div>
+            </div>
+            <div class="product__content">
+              <span class="product__category"></span>
+              <a href="details.html">
+                <h3 class="product__title">Led TV</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0308/5641/3319/files/Beni_Design_Queen_Size_Bed_For_Bedroom_with_Storage_83c93778-c882-4bcb-82a8-c2451c65e6e6_480x480.jpg?v=1675917944"
+                  alt=""
+                  class="product__img default"
+                />
+                <img
+                  src="https://image.made-in-china.com/202f0j00KzwoWcfEaRbG/2023-New-Design-Space-Saving-Bed-Nordic-Solid-Wood-Bed-Custom-Double-Bed-for-Bedroom.webp"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+              <div class="product__badge light-orange">Hot</div>
+            </div>
+            <div class="product__content">
+              <span class="product__category">Clothing</span>
+              <a href="details.html">
+                <h3 class="product__title">Beds</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img
+                  src="https://cdn.cdnparenting.com/articles/2019/03/22153446/290444324-H-1024x700.webp"
+                  alt=""
+                  class="product__img default"
+                />
+                <img
+                  src="https://os-wordpress-media.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/11/24212247/Air-Conditioner-Buying-Guide-750x375.jpg"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+              <div class="product__badge light-blue">Hot</div>
+            </div>
+            <div class="product__content">
+              <span class="product__category"></span>
+              <a href="details.html">
+                <h3 class="product__title">AC</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFUEkHtojmIGzu2V5adPBPLhsSAOpyb1ekWg&s"
+                  alt=""
+                  class="product__img default"
+                />
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCp2kIJMLAqsbv1sK6xfqqoxnVEebjmYBPcQ&s"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+              <div class="product__badge light-blue">-30%</div>
+            </div>
+            <div class="product__content">
+              <span class="product__category"></span>
+              <a href="details.html">
+                <h3 class="product__title">Cooler</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img
+                  src="https://www.livemint.com/lm-img/img/2024/08/29/1600x900/gear_cycles_under_10000_1724917308714_1724917326501.jpg"
+                  alt=""
+                  class="product__img default"
+                />
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxLf-thUoFpactlRFlZqm_xux2ahlWYq-Wbw&s"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+              <div class="product__badge light-blue">-22%</div>
+            </div>
+            <div class="product__content">
+              <span class="product__category"></span>
+              <a href="details.html">
+                <h3 class="product__title">Bicycle</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img
+                  src="https://www.bajajelectricals.com/media/7549/home-essentials-fan-banner-23.jpg"
+                  alt=""
+                  class="product__img default"
+                />
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3EofBguBEzBrqZgv172W8vm-NopB4jUx-og&s"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+              <div class="product__badge light-green">-22%</div>
+            </div>
+            <div class="product__content">
+              <span class="product__category">Clothing</span>
+              <a href="details.html">
+                <h3 class="product__title">Fan</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img
+                  src="https://shop.haierindia.com/blog/wp-content/uploads/2024/11/Smart-Fridges-4.jpg.webp"
+                  alt=""
+                  class="product__img default"
+                />
+                <img
+                  src="https://www.hdbfs.com/themes/custom/hdbfs/images/blog/750x350_Top-5-Refrigerators.webp"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product__content">
+              <span class="product__category">Clothing</span>
+              <a href="details.html">
+                <h3 class="product__title">Fridge</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img
+                  src="https://i.insider.com/66fc1b3ef44bdb4cfa388ec6?width=700"
+                  alt=""
+                  class="product__img default"
+                />
+                <img
+                  src="https://s.yimg.com/ny/api/res/1.2/TY1ioo_BvjC_Zv1ZRjvfjQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTU0MA--/https://media.zenfs.com/en/pc_mag_263/4cc837f01ba7923db76935ea80b19830"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+              <div class="product__badge light-blue">-30%</div>
+            </div>
+            <div class="product__content">
+              <span class="product__category"></span>
+              <a href="details.html">
+                <h3 class="product__title">phones</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img
+                  src="https://www.adorama.com/alc/wp-content/uploads/2021/04/photography-camera-types-feature.jpg"
+                  alt=""
+                  class="product__img default"
+                />
+                <img
+                  src="https://www.adobe.com/creativecloud/photography/discover/media_1b4507ec1fa10efefcbe23c58bea28edf67c4f402.png?width=750&format=png&optimize=medium"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+              <div class="product__badge light-blue">-22%</div>
+            </div>
+            <div class="product__content">
+              <span class="product__category">Clothing</span>
+              <a href="details.html">
+                <h3 class="product__title">Cameras</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img
+                  src="https://i.gadgets360cdn.com/large/Samsung_Galaxytab_s8_ultra_cover_gadgets360_1650548517059.jpg"
+                  alt=""
+                  class="product__img default"
+                />
+                <img
+                  src="https://i0.wp.com/nasilemaktech.com/wp-content/uploads/2022/04/Samsung-Galaxy-Tab-S8-Ultra-review-00022.jpg?ssl=1"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+              <div class="product__badge light-green">-22%</div>
+            </div>
+            <div class="product__content">
+              <span class="product__category">Clothing</span>
+              <a href="details.html">
+                <h3 class="product__title">Tabs</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+          <div class="product__item">
+            <div class="product__banner">
+              <a href="details.html" class="product__images">
+                <img
+                  src="https://img.choice.com.au/-/media/4a6963c71b7c40a7924cc8f8bc221269.ashx?w=660&jq=80%20660w"
+                  alt=""
+                  class="product__img default"
+                />
+                <img
+                  src="https://d3vpmhw8imxmio.cloudfront.net/product-variants/1000001233/LIFESTYLE/1000001233_2-650x650.webp"
+                  alt=""
+                  class="product__img hover"
+                />
+              </a>
+              <div class="product__actions">
+                <a href="#" class="action__btn" aria-label="Quick View">
+                  <i class="fi fi-rs-eye"></i>
+                </a>
+                <a
+                  href="#"
+                  class="action__btn"
+                  aria-label="Add to Wishlist"
+                >
+                  <i class="fi fi-rs-heart"></i>
+                </a>
+                <a href="#" class="action__btn" aria-label="Compare">
+                  <i class="fi fi-rs-shuffle"></i>
+                </a>
+              </div>
+            </div>
+            <div class="product__content">
+              <span class="product__category"></span>
+              <a href="details.html">
+                <h3 class="product__title">Bulds</h3>
+              </a>
+              <div class="product__rating">
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+                <i class="fi fi-rs-star"></i>
+              </div>
+              <div class="product__price flex">
+                <span class="new__price">$238.85</span>
+                <span class="old__price">$245.8</span>
+              </div>
+              <a
+                href="#"
+                class="action__btn cart__btn"
+                aria-label="Add To Cart"
+              >
+                <i class="fi fi-rs-shopping-bag-add"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <ul class="pagination">
+          <li><a href="#" class="pagination__link active">01</a></li>
+          <li><a href="#" class="pagination__link">02</a></li>
+          <li><a href="#" class="pagination__link">03</a></li>
+          <li><a href="#" class="pagination__link">...</a></li>
+          <li><a href="#" class="pagination__link">16</a></li>
+          <li><a href="#" class="pagination__link icon">
+            <i class="fi-rs-angle-double-small-right"></i>
+          </a></li>
+        </ul>
+      </section>
+
+      <!--=============== NEWSLETTER ===============-->
+      <section class="newsletter section">
+        <div class="newsletter__container container grid">
+          <h3 class="newsletter__title flex">
+            <img
+              src="./assets/img/icon-email.svg"
+              alt=""
+              class="newsletter__icon"
+            />
+            Sign in to Newsletter
+          </h3>
+          <p class="newsletter__description">
+            ...and receive $25 coupon for first shopping.
+          </p>
+          <form action="" class="newsletter__form">
+            <input
+              type="text"
+              placeholder="Enter Your Email"
+              class="newsletter__input"
+            />
+            <button type="submit" class="newsletter__btn">Subscribe</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!--=============== FOOTER ===============-->
+    <footer class="footer container">
+      <div class="footer__container grid">
+        <div class="footer__content">
+          <a href="index.html" class="footer__logo">
+            <img src="s-removebg-preview.png" alt="" class="footer__logo-img" />
+          </a>
+          <h4 class="footer__subtitle">Contact</h4>
+          <p class="footer__description">
+            <span>Address:</span> 13 Tlemcen Road, Street 32, Beb-Wahren
+          </p>
+          <p class="footer__description">
+            <span>Phone:</span> +01 2222 365 /(+91) 01 2345 6789
+          </p>
+          <p class="footer__description">
+            <span>Hours:</span> 10:00 - 18:00, Mon - Sat
+          </p>
+          <div class="footer__social">
+            <h4 class="footer__subtitle">Follow Me</h4>
+            <div class="footer__links flex">
+              <a href="#">
+                <img
+                  src="https://w7.pngwing.com/pngs/796/55/png-transparent-instagram-logo-computer-icons-insta-logo-rectangle-sticker-circle.png"
+                  alt=""
+                  class="footer__social-icon"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/018/930/476/non_2x/facebook-logo-facebook-icon-transparent-free-png.png"
+                  alt=""
+                  class="footer__social-icon"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeXuD48dyKf5gvGkGGfym0FJkQxf3MsYMq0w&s"
+                  alt=""
+                  class="footer__social-icon"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="https://assets.turbologo.com/blog/en/2019/10/19084944/youtube-logo-illustration.jpg"
+                  alt=""
+                  class="footer__social-icon"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="https://content.linkedin.com/content/dam/brand/site/img/logo/logo-hero.png"
+                  alt=""
+                  class="footer__social-icon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__content">
+          <h3 class="footer__title">Address</h3>
+          <ul class="footer__links">
+            <li><a href="footer.html" class="footer__link">About Us</a></li>
+            <li><a href="footer.html" class="footer__link">Delivery Information</a></li>
+            <li><a href="footer.html" class="footer__link">Privacy Policy</a></li>
+            <li><a href="footer.html" class="footer__link">Terms & Conditions</a></li>
+            <li><a href="footer.html" class="footer__link">Contact Us</a></li>
+            <li><a href="footer.html" class="footer__link">Support Center</a></li>
+          </ul>
+        </div>
+        <div class="footer__content">
+          <h3 class="footer__title">My Account</h3>
+          <ul class="footer__links">
+            <li><a href="login-register.html" class="footer__link">Sign In</a></li>
+            <li><a href="footer.html" class="footer__link">View Cart</a></li>
+            <li><a href="footer.html" class="footer__link">My Wishlist</a></li>
+            <li><a href="footer.html" class="footer__link">Track My Order</a></li>
+            <li><a href="footer.html" class="footer__link">Help</a></li>
+            <li><a href="footer.html" class="footer__link">Order</a></li>
+          </ul>
+        </div>
+        <div class="footer__content">
+          <h3 class="footer__title">Secured Payed Gateways</h3>
+          <img
+            src="./assets/img/payment-method.png"
+            alt=""
+            class="payment__img"
+          />
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="copyright">&copy; 2024 Evara. All right reserved</p>
+        <span class="designer">Designer by Crypticalcoder</span>
+      </div>
+    </footer>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="main.js"></script>
+  </body>
+</html>
